@@ -1,0 +1,38 @@
+<h1>Reading Challenge!</h1>
+
+<h2>Books not read!</h2>
+
+<ul>
+  {{#each books}}
+    {{#if done}}
+      {{> books/book-block done=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Books you've read!</h2>
+
+<ul>
+  {{#each books}}
+    {{#unless done}}
+      {{> books/book-block done=false}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Add a Book</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Title:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="done">Done?</label><br>
+    <input type="radio" name="done" value="1" checked> Done!<br>
+    <input type="radio" name="done" value="0"> Not done
+  </div>
+
+  <button type="submit">Add Book</button>
+</form>
