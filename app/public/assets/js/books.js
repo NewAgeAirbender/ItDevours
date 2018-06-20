@@ -5,11 +5,11 @@ $(function() {
       var newDone = $(this).data("newdone");
   
       var newDoneState = {
-        done: newSleep
+        done: newDone
       };
   
       // Send the PUT request.
-      $.ajax("/api/cats/" + id, {
+      $.ajax("/api/books/" + id, {
         type: "PUT",
         data: newDoneState
       }).then(
@@ -22,7 +22,6 @@ $(function() {
     });
   
     $(".create-form").on("submit", function(event) {
-      // Make sure to preventDefault on a submit event.
       event.preventDefault();
   
       var newBook = {
@@ -37,7 +36,6 @@ $(function() {
       }).then(
         function() {
           console.log("created new book");
-          // Reload the page to get the updated list
           location.reload();
         }
       );
@@ -52,7 +50,6 @@ $(function() {
       }).then(
         function() {
           console.log("deleted book", id);
-          // Reload the page to get the updated list
           location.reload();
         }
       );

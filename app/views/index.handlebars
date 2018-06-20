@@ -5,7 +5,7 @@
 <ul>
   {{#each books}}
     {{#if done}}
-      {{> books/book-block done=false}}
+      {{> book-block done=false}}
     {{/if}}
   {{/each}}
 </ul>
@@ -15,7 +15,7 @@
 <ul>
   {{#each books}}
     {{#unless done}}
-      {{> books/book-block done=false}}
+      {{> book-block done=true}}
     {{/unless}}
   {{/each}}
 </ul>
@@ -30,8 +30,8 @@
 
   <div class="form-group">
     <label for="done">Done?</label><br>
-    <input type="radio" name="done" value="1" checked> Done!<br>
-    <input type="radio" name="done" value="0"> Not done
+    <input type="radio" name="done" value="1" checked> Not done!<br>
+    <input type="radio" name="done" value="0"> Done
   </div>
 
   <button type="submit">Add Book</button>

@@ -2,8 +2,8 @@
 	{{title}}
 
 	<button class="change-done" data-id="{{id}}" data-newdone="{{done}}">
-		{{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
+		{{#if done}}Reread!{{else}}Finish!{{/if}}
 	</button>
 
-	<button class="delete-cat" data-id="{{this.id}}">DELETE!</button>
+	<button class="delete-book" data-id="{{this.id}}">DELETE!</button>
 </li>
